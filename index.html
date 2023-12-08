@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Harcama Uygulaması</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Kişisel Harcama Takibi</h2>
+        <form id="expense-form">
+            <div class="mb-3">
+                <label for="description" class="form-label">Açıklama</label>
+                <input type="text" class="form-control" id="description" placeholder="Harcama açıklaması girin" aria-label="Harcama açıklaması">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Kategori</label>
+                <select class="form-control" id="category" aria-label="Harcama kategorisi">
+                    <option value="Yiyecek">Yiyecek</option>
+                    <option value="Ulaşım">Ulaşım</option>
+                    <option value="Konut">Konut</option>
+                    <option value="Eğlence">Eğlence</option>
+                    <!-- Diğer kategoriler buraya eklenebilir -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Tutar</label>
+                <input type="number" class="form-control" id="amount" placeholder="Tutarı girin" aria-label="Tutar">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Tarih</label>
+                <input type="date" class="form-control" id="date" aria-label="Tarih">
+            </div>
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </form>
+
+        <!-- Chart Container -->
+        <div class="mt-4">
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+        <ul id="expense-list" class="list-group mt-4">
+            <!-- Harcama kalemleri buraya eklenecek -->
+        </ul>
+
+        <!-- Filtreleme bölümü -->
+        <div class="filter-section">
+            <label for="filter-category">Kategoriye Göre Filtrele:</label>
+            <select id="filter-category" class="form-control">
+                <option value="All">Tümü</option>
+                <option value="Yiyecek">Yiyecek</option>
+                <option value="Ulaşım">Ulaşım</option>
+                <option value="Konut">Konut</option>
+                <option value="Eğlence">Eğlence</option>
+                <!-- Diğer kategoriler buraya eklenebilir -->
+            </select>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2023 Kişisel Harcama Uygulaması</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
